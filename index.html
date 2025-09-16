@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control de Barbería</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor-principal {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .modulo-control {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .modulo-control:hover {
+            transform: translateY(-5px);
+        }
+
+        h2, h3, h4 {
+            color: #ff8c00;
+            border-bottom: 2px solid #ff8c00;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .lista-opciones {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lista-opciones li {
+            background: #1a1a1a;
+            padding: 2px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .lista-opciones li::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #ff8c00, #ffc400);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lista-opciones li:hover::before {
+            opacity: 1;
+        }
+
+        .lista-opciones li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+        }
+
+        .opcion-item {
+            background-color: #000;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .opcion-item h5 {
+            margin: 0;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .opcion-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #bbb;
+            transition: color 0.3s ease;
+        }
+
+        .lista-opciones li:hover .opcion-item h5 {
+            color: #ff8c00;
+        }
+
+        .lista-opciones li:hover .opcion-item p {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        <div class="modulo-control" id="modulo-panel">
+            <div class="imagen-modulo">
+                <img src="https://via.placeholder.com/900x400/000000/FFFFFF?text=Panel+de+Control" alt="Imagen del panel de control">
+            </div>
+            <h2>Panel de control de Barbería</h2>
+            <p>Mantén presionado el **Logo** por 6 segundos para acceder a las opciones de control. Esto evita que personas no autorizadas modifiquen la configuración.</p>
+        </div>
+
+        <div class="modulo-control" id="modulo-buscador">
+            <h3>Buscador de Reservas</h3>
+            <p>
+                Esta herramienta te permite encontrar cualquier reserva de forma rápida. Puedes buscar por:
+                <br> **Año**, **Mes**, **Día**, **Hora** o **Nombre** del cliente.
+            </p>
+            <div class="imagen-modulo">
+                <img src="https://i.ibb.co/YTB2WLzf/buscador.png" style="width: 100%;" >
+            </div>
+        </div>
+<style>
+    body{
+        font-weight: bold;
+    }
+    .opcion-abrir .opcion-item {
+    background-color: #27ae60; /* Verde vibrante */
+}
+.opcion-cerrar .opcion-item {
+    background-color: #e74c3c; /* Rojo fuerte */
+}
+.opcion-horarios .opcion-item {
+    background-color: #3498db; /* Azul profundo */
+}
+.opcion-borrar-todo .opcion-item {
+    background-color: purple /* Amarillo/Naranja */
+}
+.opcion-marcar-dias .opcion-item {
+    background-color: rgb(182, 182, 0) !important; /* Morado */
+    color: #000;
+}
+.opcion-recurrentes .opcion-item {
+    background-color: #1abc9c; /* Verde azulado */
+    color: #000;
+}
+.opcion-borrar-mes .opcion-item {
+    background-color: lightgrey; /* Naranja oscuro */
+}
+.opcion-eliminar-uno .opcion-item {
+    background-color: rgb(255, 80, 80); /* Gris oscuro */
+}
+</style>
+        <div class="modulo-control" id="modulo-opciones">
+            <h3>Opciones de Control</h3>
+           <div class="modulo-control">
+    <h3>Opciones de Control</h3>
+    <ul class="lista-opciones">
+        <li class="opcion-abrir">
+            <div class="opcion-item">
+                <h5>Abrir Barbería</h5>
+                <p style="color: #fff;">Activa la agenda para que los clientes puedan reservar y quita el letrero de "CERRADO".</p>
+            </div>
+        </li>
+        <li class="opcion-cerrar">
+            <div class="opcion-item">
+                <h5 >Cerrar Barbería</h5>
+                <p style="color: #000;">Oculta el calendario y muestra un letrero de "CERRADO" para que nadie pueda reservar.</p>
+            </div>
+        </li>
+        <li class="opcion-horarios">
+            <div class="opcion-item">
+                <h5>Gestionar Horarios por Día</h5>
+                <p style="color: #000;">Permite seleccionar un día específico para cambiar sus horarios, ideal para días festivos o especiales.</p>
+            </div>
+        </li>
+        <li class="opcion-borrar-todo">
+            <div class="opcion-item">
+                <h5>Borrar todas las reservas</h5>
+                <p>Una opción para eliminar todas las reservas de la página en caso de una emergencia.</p>
+            </div>
+        </li>
+        <li class="opcion-marcar-dias">
+            <div class="opcion-item">
+                <h5>Marcar Días Cerrados 1x1</h5>
+                <p style="color: #000;">Haz clic en un día del calendario para deshabilitarlo. Se tornará de color rojo para que nadie pueda reservar ese día.</p>
+            </div>
+        </li>
+        <li class="opcion-recurrentes">
+            <div class="opcion-item">
+                <h5>CERRAR/ABRIR Días Recurrentes</h5>
+                <p style="color: #000;">Controla los días de la semana que se cierran o abren de forma regular, como los domingos.</p>
+            </div>
+        </li>
+        <li class="opcion-borrar-mes">
+            <div class="opcion-item">
+                <h5 style="color: green;">Borrar Reservas Antiguas del Mes</h5>
+                <p style="color: #000;">Elimina las reservas desde el primer día del mes hasta el día actual, limpiando el registro rápidamente.</p>
+            </div>
+        </li>
+        <li class="opcion-eliminar-uno">
+            <div class="opcion-item">
+                <h5>Eliminar solo 1 reserva</h5>
+                <p>Borra una única reserva a tu elección sin afectar a las demás.</p>
+            </div>
+        </li>
+    </ul>
+</div>
+        </div>
+
+        <div class="modulo-control" id="modulo-limpieza">
+            <h3>Limpieza Automática</h3>
+            <p>Todas las reservas con más de 1 año de antigüedad se eliminarán automáticamente para mantener el rendimiento del sistema y evitar que la base de datos se llene.</p>
+            <div class="imagen-modulo">
+                <img style="border: 2px solid red;" src="https://i.ibb.co/kgxYXSV6/basededatos.png" alt="Imagen de limpieza de datos">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
